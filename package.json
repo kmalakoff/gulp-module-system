@@ -1,0 +1,17 @@
+{
+  "name": "gulp-module-system",
+  "version": "0.0.1",
+  "description": "Wraps JavaScript files in a module system. Great for creating browser compatible releases of Node.js libraries",
+  "keywords": ["gulpplugin", "module", "system", "local", "brunch"],
+  "main": "index.coffee",
+  "license": "MIT",
+  "author": "Kevin Malakoff (https://github.com/kmalakoff)",
+  "repository": {"type": "git", "url": "https://github.com/kmalakoff/gulp-module-system.git"},
+  "engines": {"node": ">=0.8.0"},
+  "dependencies": {
+    "coffee-script": "*",
+    "gulp": "*",
+    "gulp-wrap-define": "*",
+    "event-stream": "*"
+  }
+}
