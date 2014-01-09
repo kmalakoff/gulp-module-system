@@ -9,7 +9,7 @@ module.exports = (options={}) ->
       es.map((file, callback) -> callback(null, file))
       (require "./module_systems/#{options.type}")(options)
       es.map (file, callback) ->
-        return callback(nulll, file) unless options.umd
+        return callback(null, file) unless options.umd
         fileWrapUMD file, options.umd, (err, umd_file) =>
           return @emit 'error', err if err
           callback(null, umd_file)
