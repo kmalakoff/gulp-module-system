@@ -12,6 +12,7 @@
     "coffee-script": "*",
     "gulp": "*",
     "gulp-wrap-define": "*",
+    "gulp-concat": "*",
     "event-stream": "*"
   }
 }
