@@ -94,9 +94,7 @@ START = """
 """
 
 END = """
-});
-
-;
+});\n
 """
 
 module.exports = (options) -> (require '../lib/wrap_defines')(options, START, END)

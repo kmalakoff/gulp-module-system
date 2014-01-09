@@ -8,7 +8,9 @@ module.exports = (file, options={}, callback) ->
     dependencies = ['require']
     dependencies = dependencies.concat(options.dependencies) if options.dependencies
 
-    if options.bottom
+    # TODO: make an AMD-compliant wrap that also handles shimming for global version
+    if true
+    # if options.bottom
       wraped = """
 (function() {
   #{modules}
