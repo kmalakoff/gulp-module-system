@@ -15,7 +15,7 @@ var globals = {};
 
   var expand = function(root, name) {
     var results = [], parts, part;
-    if (/^\.\.?(\/|$)/.test(name)) {
+    if (\/^\\.\\.?(\\\/|$)\/.test(name)) {
       parts = [root, name].join('/').split('/');
     } else {
       parts = name.split('/');

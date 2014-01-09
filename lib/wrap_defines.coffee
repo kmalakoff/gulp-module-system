@@ -12,6 +12,6 @@ module.exports = (options, START, END) ->
       .pipe(es.map (file, callback) =>
         file.pipe(toText (text) =>
           file.contents = new Buffer((START or '') + text + (END or ''))
-          @queue(file); callback()
+          @queue(file); @queue(null); callback()
         )
       )
