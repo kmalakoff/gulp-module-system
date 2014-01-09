@@ -9,10 +9,9 @@ module.exports = (options, START, END) ->
     es.readArray(files)
       .pipe(define({define: 'require.register', root: options.root}))
       .pipe(concat(options.file_name))
-      .pipe(es.writeArray (err, results) =>
-        return @emit('error', err) if err
-        (file = results[0]).pipe(toText (text) =>
+      .pipe(es.map (file, callback) =>
+        file.pipe(toText (text) =>
           file.contents = new Buffer((START or '') + text + (END or ''))
-          @queue(file); @queue(null)
+          @queue(file); callback()
         )
       )

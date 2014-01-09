@@ -1,8 +1,8 @@
 {
   "name": "gulp-module-system",
   "version": "0.0.1",
-  "description": "Wraps JavaScript files in a module system. Great for creating browser compatible releases of Node.js libraries",
-  "keywords": ["gulpplugin", "module", "system", "local", "brunch"],
+  "description": "Gulp plugin to combine files into a module system. Great for creating browser compatible releases of Node.js libraries",
+  "keywords": ["gulpplugin", "module", "system", "local", "local-shim", "brunch"],
   "main": "index.coffee",
   "license": "MIT",
   "author": "Kevin Malakoff (https://github.com/kmalakoff)",
