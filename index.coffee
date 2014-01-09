@@ -1,6 +1,5 @@
 es = require 'event-stream'
 gutil = require 'gulp-util'
-compile = require 'gulp-compile-js'
 concat = require 'gulp-concat'
 fileWrapUMD = require './lib/file_wrap_umd'
 
@@ -8,7 +7,6 @@ module.exports = (options={}) ->
   try
     return es.pipeline(
       es.map((file, callback) -> callback(null, file))
-      compile(options.compile or {})
       (require "./module_systems/#{options.type}")(options)
       es.map (file, callback) ->
         return callback(nulll, file) unless options.umd
