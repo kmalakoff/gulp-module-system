@@ -91,12 +91,14 @@ var globals = {externalRequire: require};
 
       // already registered with local require
       try { if (globals.require(item.path)) { return; } } catch (e) {}
-      
+
       // use externally provided require
       try { dep = globals.externalRequire(item.path); } catch(e) {}
 
       // use global require
-      try { dep = typeof window.require === "function" ? window.require(item.path) : void 0; } catch (e) {}
+      if(!dep) {
+        try { dep = typeof window.require === "function" ? window.require(item.path) : void 0; } catch (e) {}
+      }
 
       // use symbol path on window
       if (!dep && item.symbol) {
