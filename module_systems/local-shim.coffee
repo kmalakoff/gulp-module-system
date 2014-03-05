@@ -1,5 +1,10 @@
 START = """
-var globals = {externalRequire: require};
+var globals = {};
+
+// save potentially pre-existing require for later
+if('undefined' !== typeof(require) && null !== require) {
+  globals.externalRequire = require
+}
 
 /* local-only brunch-like require (based on https://github.com/brunch/commonjs-require-definition) */
 (function() {
