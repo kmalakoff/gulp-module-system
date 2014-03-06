@@ -1,6 +1,11 @@
 START = """
 var globals = {};
 
+// save potentially pre-existing require for later
+if('undefined' !== typeof(require) && null !== require) {
+  globals.externalRequire = require
+}
+
 /* local-only brunch-like require (based on https://github.com/brunch/commonjs-require-definition) */
 (function() {
   'use strict';
@@ -92,8 +97,13 @@ var globals = {};
       // already registered with local require
       try { if (globals.require(item.path)) { return; } } catch (e) {}
 
+      // use externally provided require
+      try { dep = globals.externalRequire(item.path); } catch(e) {}
+
       // use global require
-      try { dep = typeof window.require === "function" ? window.require(item.path) : void 0; } catch (e) {}
+      if(!dep) {
+        try { dep = typeof window.require === "function" ? window.require(item.path) : void 0; } catch (e) {}
+      }
 
       // use symbol path on window
       if (!dep && item.symbol) {
