@@ -10,7 +10,6 @@
   "engines": {"node": ">=0.8.0"},
   "dependencies": {
     "coffee-script": "*",
-    "gulp": "*",
     "gulp-wrap-define": "*",
     "gulp-concat": "*",
     "event-stream": "*"
