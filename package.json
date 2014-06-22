@@ -1,6 +1,6 @@
 {
   "name": "gulp-module-system",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Gulp plugin to combine files into a module system. Great for creating browser compatible releases of Node.js libraries",
   "keywords": ["gulpplugin", "module", "system", "local", "local-shim", "brunch"],
   "main": "index.coffee",
