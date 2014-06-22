@@ -1,5 +1,4 @@
 START = """
-
 var globals = {requires: []};
 if (window.require) globals.requires.push(window.require);
 if (typeof require !== "undefined" && require !== null) globals.requires.push(require);
